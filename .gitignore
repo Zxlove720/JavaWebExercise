@@ -1,0 +1,26 @@
+# 编译输出目录
+target/
+
+# 本地 IDE 配置文件
+.idea/
+
+# IntelliJ IDEA 生成的临时文件
+*.iml
+out/
+
+# 项目构建文件
+.classpath
+.project
+
+# 日志文件
+logs/
+
+# 本地运行的临时文件
+*.swp
+
+# JUnit 生成的临时文件
+**/test-results/
+
+# Java 字节码文件
+*.class
+
