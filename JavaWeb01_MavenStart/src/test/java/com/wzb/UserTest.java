@@ -33,4 +33,5 @@ public class UserTest {
         // 判断两个对象（引用）是否相等，不相等就报错
         Assertions.assertSame("男", gender, "same报错了"); // 男，此处不报错
     }
+
 }
