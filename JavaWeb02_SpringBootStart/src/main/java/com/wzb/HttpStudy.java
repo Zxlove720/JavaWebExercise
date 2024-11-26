@@ -1,7 +1,7 @@
 package com.wzb;
 
 public class HttpStudy {
-    public static void main(String[] args) {
+
         /*
         HTTP协议：Hyper Text Transfer Protocol，超文本传输协议，规定了浏览器和服务器之间数据传输的规则（格式）
         浏览器给服务器发送请求，服务器处理之后响应对应的数据
@@ -15,5 +15,5 @@ public class HttpStudy {
                 优点：不共享数据，请求响应的速度更快
 
          */
-    }
+
 }
