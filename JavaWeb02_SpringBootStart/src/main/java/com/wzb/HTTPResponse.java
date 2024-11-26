@@ -47,6 +47,9 @@ public class HTTPResponse {
      */
     @RequestMapping("/response")
     public void response(HttpServletResponse response) throws Exception {
+        /* 虽然方法的本身没有返回值，但是对于response这个对象的设置、封装数据等操作都填充了需要返回的内容，
+        最后，服务器会将整个HttpServletResponse对象响应给客户端，不需要返回值（即使没有操作该对象也会返回） */
+
         // 设置响应状态码
         response.setStatus(302);
         // 设置响应头
