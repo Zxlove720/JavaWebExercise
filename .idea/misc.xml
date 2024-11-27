@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/JavaWeb01_MavenStart/pom.xml" />
         <option value="$PROJECT_DIR$/JavaWeb02_SpringBootStart/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaWeb03_SpringBootExercise/pom.xml" />
       </list>
     </option>
   </component>
