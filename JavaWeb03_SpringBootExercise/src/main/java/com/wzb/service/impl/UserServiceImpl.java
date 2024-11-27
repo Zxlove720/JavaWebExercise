@@ -1,9 +1,10 @@
 package com.wzb.service.impl;
 
 import com.wzb.dao.UserDao;
-import com.wzb.dao.impl.UserDaoImpl;
 import com.wzb.pojo.User;
 import com.wzb.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,12 +15,16 @@ import java.util.stream.Collectors;
  * Service层实现类
  *
  */
+@Component
 public class UserServiceImpl implements UserService {
 
-    private final UserDao userDao = new UserDaoImpl();
-    private final List<String> lines = userDao.findUser();
+    @Autowired
+    private UserDao userDao;
+    // 获取用户数据的代码不能写在此处，类的成员变量初始化是在类的实例化阶段进行的，此时可能@AutoWired注入还未完成，导致Null
+    // private final List<String> lines = userDao.findUser();
 
     public List<User> findUser() {
+        List<String> lines = userDao.findUser();
         List<User> userList = lines.stream().map(line -> {
             String[] parts = line.split(",");
             Integer id = Integer.parseInt(parts[0]);
