@@ -32,4 +32,11 @@ class JavaWeb05MyBatisApplicationTests {
         Integer rows = userMapper.deleteById(5);
         System.out.println("影响的行数是：" + rows);
     }
+
+    @Test
+    public void testInsert() {
+        User user = new User(null, "zhouyu", "123456", "周瑜", 23);
+        Integer rows = userMapper.insertUser(user);
+        System.out.println("影响的行数是：" + rows);
+    }
 }
