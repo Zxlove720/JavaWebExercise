@@ -26,4 +26,10 @@ class JavaWeb05MyBatisApplicationTests {
             System.out.println(user);
         }
     }
+
+    @Test
+    public void testDelete() {
+        Integer rows = userMapper.deleteById(5);
+        System.out.println("影响的行数是：" + rows);
+    }
 }
