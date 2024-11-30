@@ -39,4 +39,17 @@ class JavaWeb05MyBatisApplicationTests {
         Integer rows = userMapper.insertUser(user);
         System.out.println("影响的行数是：" + rows);
     }
+
+    @Test
+    public void testUpdate() {
+        User user = new User(1, "liubei", "123456", "刘备", 25);
+        Integer rows = userMapper.updateUser(user);
+        System.out.println("影响的行数是：" + rows);
+    }
+
+    @Test
+    public void testFind() {
+        User user = userMapper.selectUser("liubei", "123456");
+        System.out.println(user);
+    }
 }
