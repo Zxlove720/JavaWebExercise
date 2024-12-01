@@ -9,7 +9,14 @@
         <option value="$PROJECT_DIR$/JavaWeb03_SpringBootExercise/pom.xml" />
         <option value="$PROJECT_DIR$/JavaWeb04_Database/pom.xml" />
         <option value="$PROJECT_DIR$/JavaWeb05_MyBatis/pom.xml" />
+        <option value="$PROJECT_DIR$/Java_Web06_develop/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaWeb06_Develop/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Java_Web06_develop/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" project-jdk-name="21" project-jdk-type="JavaSDK">
