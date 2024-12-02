@@ -20,6 +20,6 @@ public interface UserMapper {
     @Update("update user set username=#{username}, password=#{password}, name=#{name}, age=#{age} where id=#{id}")
     public Integer updateUser(User user);
 
-    @Select("select * from user where username = #{username} and password = #{password}")
-    public User selectUser(@Param("username")String username, @Param("password")String password);
+//    @Select("select * from user where username = #{username} and password = #{password}")
+//    public User selectUser(@Param("username")String username, @Param("password")String password);
 }
