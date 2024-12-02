@@ -11,4 +11,9 @@ public interface EmpMapper {
 
     public List<Emp> selectEmp(String name, int gender, LocalDate begin, LocalDate end);
 
+    public void deleteEmp(List<Integer> ids);
+
+    public void updateEmp(Emp emp);
+
+
 }

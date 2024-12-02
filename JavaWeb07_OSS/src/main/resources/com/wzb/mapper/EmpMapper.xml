@@ -18,4 +18,22 @@
             order by update_time desc
         </where>
     </select>
+
+    <delete id="deleteEmp">
+        delete from emp where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <update id="updateEmp">
+        update emp
+        <set>
+            <if test="name != null">name = #{name},</if>
+            <if test="gender != null">gender = #{gender},</if>
+            <if test="username != null">username = #{username},</if>
+            <if test="updateTime != null">updateTime = #{updateTime}</if>
+        </set>
+        where id = #{id}
+    </update>
 </mapper>
