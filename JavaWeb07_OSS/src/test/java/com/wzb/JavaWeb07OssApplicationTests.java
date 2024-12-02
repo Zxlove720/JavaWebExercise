@@ -21,7 +21,7 @@ class JavaWeb07OssApplicationTests {
 
     @Test
     public void selectEmpTest() {
-        List<Emp> empList = empMapper.selectEmp("张", 1, null, null);
+        List<Emp> empList = empMapper.selectEmp(null, 1, null, null);
         for (Emp emp : empList) {
             System.out.println(emp);
         }

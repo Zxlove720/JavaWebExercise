@@ -5,16 +5,17 @@
 <mapper namespace="com.wzb.mapper.EmpMapper">
     <select id="selectEmp" resultType="com.wzb.pojo.Emp">
         select * from emp
-        where
-        <if test="name != null">
-            name like concat('%', #{name}, '%')
-        </if>
-        <if test="gender != null">
-            and gender = #{gender}
-        </if>
-        <if test="begin != null and end != null">
-            and entrydate between #{begin} and #{end}
-        </if>
-        order by update_time desc
+        <where>
+            <if test="name != null">
+                name like concat('%', #{name}, '%')
+            </if>
+            <if test="gender != null">
+                and gender = #{gender}
+            </if>
+            <if test="begin != null and end != null">
+                and entrydate between #{begin} and #{end}
+            </if>
+            order by update_time desc
+        </where>
     </select>
 </mapper>
