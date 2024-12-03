@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -38,7 +39,13 @@ class JavaWeb07OssApplicationTests {
 
     @Test
     public void updateEmpTest() {
-        Emp
+        Emp emp = new Emp();
+        emp.setId(17);
+        emp.setUsername("tom");
+        emp.setName("汤姆");
+        emp.setGender(2);
+        emp.setUpdateTime(LocalDateTime.now());
+        empMapper.updateEmp(emp);
     }
 
 }
