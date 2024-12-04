@@ -3,10 +3,7 @@ package com.wzb.controller;
 import com.wzb.pojo.Address;
 import com.wzb.pojo.TestUser;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -74,9 +71,21 @@ public class TestController {
         return "现在时间是" + times;
     }
 
-    @RequestMapping("Json")
+    @RequestMapping("/Json")
     public String getJsonParameter(@RequestBody TestUser user) {
         System.out.println(user);
         return "Json数据接收成功" + user;
+    }
+
+    @RequestMapping("/path/{id}")
+    public String getPathParameter(@PathVariable int id) {
+        System.out.println("成功获取路径参数：" + id);
+        return "successful";
+    }
+
+    @RequestMapping("/path/{id}/{name}")
+    public String getManyPathParameter(@PathVariable int id, @PathVariable String name) {
+        System.out.println("成功获取多个路径参数：" + id + "   " + name);
+        return "successful";
     }
 }
