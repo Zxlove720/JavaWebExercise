@@ -33,4 +33,13 @@ public class TestUser {
     public void setAddress(Address address) {
         this.address = address;
     }
+
+    @Override
+    public String toString() {
+        return "TestUser{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", address=" + address +
+                '}';
+    }
 }

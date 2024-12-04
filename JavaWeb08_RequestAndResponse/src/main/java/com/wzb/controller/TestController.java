@@ -3,6 +3,7 @@ package com.wzb.controller;
 import com.wzb.pojo.Address;
 import com.wzb.pojo.TestUser;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -71,5 +72,11 @@ public class TestController {
     public String getDateParameter(@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime times) {
         System.out.println(times);
         return "现在时间是" + times;
+    }
+
+    @RequestMapping("Json")
+    public String getJsonParameter(@RequestBody TestUser user) {
+        System.out.println(user);
+        return "Json数据接收成功" + user;
     }
 }
