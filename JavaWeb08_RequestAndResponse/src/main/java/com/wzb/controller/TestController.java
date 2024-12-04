@@ -3,7 +3,10 @@ package com.wzb.controller;
 import com.wzb.pojo.Address;
 import com.wzb.pojo.TestUser;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class TestController {
@@ -44,11 +47,23 @@ public class TestController {
 //    }
 
 
-    @RequestMapping("/hobbies")
-    public String getArrayParameter(String[] hobby) {
-        for (String hobbies : hobby) {
-            System.out.println(hobbies);
+//    @RequestMapping("/hobbies")
+//    public String getArrayParameter(String[] hobby) {
+//        for (String hobbies : hobby) {
+//            System.out.println(hobbies);
+//        }
+//        return "successful";
+//    }
+
+    @RequestMapping("/listParameter")
+    public String getListParameter(@RequestParam(name = "hobby") List<String> hobbyss) {
+        for (String s : hobbyss) {
+            System.out.println(s);
         }
+        System.out.println("用集合成功接收数组参数");
         return "successful";
     }
+
+
+    
 }
