@@ -13,10 +13,13 @@
         <option value="$PROJECT_DIR$/JavaWeb06_Develop/pom.xml" />
         <option value="$PROJECT_DIR$/JavaWeb07_OSS/pom.xml" />
         <option value="$PROJECT_DIR$/JavaWeb08_RequestAndResponse/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaWeb09_FileAndOSS/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaWeb09_FileUpload/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/JavaWeb09_FileAndOSS/pom.xml" />
         <option value="$PROJECT_DIR$/Java_Web06_develop/pom.xml" />
       </set>
     </option>

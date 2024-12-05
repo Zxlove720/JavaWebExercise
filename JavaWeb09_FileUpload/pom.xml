@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.wzb</groupId>
-    <artifactId>JavaWeb02_SpringBootStart</artifactId>
+    <artifactId>JavaWeb09_FileUpload</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>JavaWeb02_SpringBootStart</name>
-    <description>JavaWeb02_SpringBootStart</description>
+    <name>JavaWeb09_FileUpload</name>
+    <description>JavaWeb09_FileUpload</description>
     <url/>
     <licenses>
         <license/>
@@ -30,11 +30,14 @@
         <java.version>21</java.version>
     </properties>
     <dependencies>
-        <!--        起步依赖：包含了该类型开发所需要的常见依赖（原理：Maven依赖传递）-->
-        <!--        这是Spring中Web开发的起步依赖，包含了开发web应用所需要的常见依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>3.0.4</version>
         </dependency>
 
         <dependency>
@@ -48,20 +51,32 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <!--            这是Spring中测试的起步依赖，包含了单元测试所需要的常见依赖-->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>5.8.22</version>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter-test</artifactId>
+            <version>3.0.4</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
