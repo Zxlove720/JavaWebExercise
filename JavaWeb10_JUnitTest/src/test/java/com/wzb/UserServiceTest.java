@@ -58,6 +58,4 @@ public class UserServiceTest {
         String gender = userService.getGender(idCard);
         Assertions.assertEquals("男", gender);
     }
-
-
 }
