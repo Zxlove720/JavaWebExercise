@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class RequestController {
-
     /**
      * 通过Tomcat封装的HttpServletRequest对象操作请求数据
      * @param request HttpServletRequest对象
@@ -24,6 +23,9 @@ public class RequestController {
         // 2.获取请求路径uri和url     url是完整的请求路径 uri是资源的访问路径
         String uri = request.getRequestURI();
         String url = request.getRequestURL().toString(); // 原始的类型是StringBuffer，需要使用toString方法转换为String
+        System.out.println("uri是" + uri);
+        System.out.println("url是" + url);
+
 
         // 3.获取请求头     User-Agent
         String userAgent = request.getHeader("User-Agent");
@@ -42,5 +44,4 @@ public class RequestController {
         System.out.println("请求的查询字符串是" + queryString);
         return "OK";
     }
-
 }
