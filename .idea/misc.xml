@@ -17,16 +17,19 @@
         <option value="$PROJECT_DIR$/JavaWeb09_FileUpload/pom.xml" />
         <option value="$PROJECT_DIR$/JavaWeb10_JUnitTest/pom.xml" />
         <option value="$PROJECT_DIR$/JavaWeb11_Http/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot01_simple_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot_simpleDemo/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/JavaWeb09_FileAndOSS/pom.xml" />
         <option value="$PROJECT_DIR$/Java_Web06_develop/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot01_simple_demo/pom.xml" />
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" project-jdk-name="21" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
