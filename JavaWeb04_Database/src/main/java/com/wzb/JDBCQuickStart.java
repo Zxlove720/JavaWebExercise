@@ -17,7 +17,9 @@ public class JDBCQuickStart {
         // 获取SQL语句执行对象
         Statement statement = connection.createStatement();
         // 在SQL语句执行对象中执行SQL语句     statement:声明、报告、语句     execute:执行、实施
-        statement.executeUpdate("update user set age = 20 where id = 1");
+        // DML语句都有返回值，代表有多少行数据受到影响
+        int lines =  statement.executeUpdate("update user set age = 20 where id = 1"); // DML语句
+        System.out.println("一共有" + lines + "行数据受到影响");
         // 处理完成后释放资源
         statement.close();
         connection.close();

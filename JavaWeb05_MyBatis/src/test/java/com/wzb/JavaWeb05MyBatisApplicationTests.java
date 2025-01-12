@@ -13,9 +13,10 @@ import java.util.List;
 // SpringBoot项目启动了，IOC容器就创建好了，若想测试IOC容器中的bean就可以直接注入了
 class JavaWeb05MyBatisApplicationTests {
 
-    private UserMapper userMapper;
+    private final UserMapper userMapper;
+
     @Autowired
-    public JavaWeb05MyBatisApplicationTests(UserMapper userMapper) {
+    public JavaWeb05MyBatisApplicationTests (UserMapper userMapper) {
         this.userMapper = userMapper;
     }
 
