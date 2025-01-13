@@ -59,7 +59,7 @@ public class JDBCQueryTest {
         String sql = "select id, username, password, name, age from user where username = ? and password = ?";
         PreparedStatement statement = connection.prepareStatement(sql);
         // 为预编译SQL中的占位符赋值     第几个占位符 + 值
-        statement.setString(1, "daqiao");
+        statement.setString(1, "liubei");
         statement.setString(2, "123456");
         // 进行查询，得到ResultSet集合
         // ResultSet中存储的是每一行记录，可以通过其中的next方法，是通过一个移动的指针完成的。
