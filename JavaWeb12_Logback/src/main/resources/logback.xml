@@ -16,7 +16,7 @@
             <!--最多保存的历史日志文件数量-->
             <MaxHistory>100</MaxHistory>
             <!--每个日志文件的最大大小，超过这个大小会自动记录到新文件，默认为10MB-->
-            <MaxFileSize>10MB</MaxFileSize>
+            <MaxFileSize>5MB</MaxFileSize>
         </rollingPolicy>
 
 
