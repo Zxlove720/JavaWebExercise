@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wzb.mapper.EmpMapper">
+<mapper namespace="com.wzb.mapper.EmpMapperOss">
     <select id="selectEmp" resultType="com.wzb.pojo.Emp">
         select * from emp
         <where>

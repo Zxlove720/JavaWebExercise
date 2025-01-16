@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Mapper
-public interface EmpMapper {
+public interface EmpMapperOss {
 
     public List<Emp> selectEmp(String name, int gender, LocalDate begin, LocalDate end);
 

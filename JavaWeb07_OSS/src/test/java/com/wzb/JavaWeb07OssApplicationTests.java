@@ -1,6 +1,6 @@
 package com.wzb;
 
-import com.wzb.mapper.EmpMapper;
+import com.wzb.mapper.EmpMapperOss;
 import com.wzb.pojo.Emp;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +14,10 @@ import java.util.List;
 @SpringBootTest
 class JavaWeb07OssApplicationTests {
 
-    private EmpMapper empMapper;
+    private EmpMapperOss empMapper;
 
     @Autowired
-    public JavaWeb07OssApplicationTests(EmpMapper empMapper) {
+    public JavaWeb07OssApplicationTests(EmpMapperOss empMapper) {
         this.empMapper = empMapper;
     }
 
