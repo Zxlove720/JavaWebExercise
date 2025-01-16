@@ -10,6 +10,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
+@RequestMapping("/depts")
 public class DeptController {
 
     private final DeptService deptService;
@@ -24,7 +25,7 @@ public class DeptController {
      */
     // 限定请求方式为GET
     // @RequestMapping(value = "/dept", method = RequestMethod.GET)
-    @GetMapping("/depts") // 建议使用衍生注解，更加简洁、优雅
+    @GetMapping // 建议使用衍生注解，更加简洁、优雅
     public Result<List<Dept>> selectAllDept() {
         log.info("查询所有部门信息");
         List<Dept> deptList = deptService.selectAllDept();
@@ -36,7 +37,7 @@ public class DeptController {
      * @param id 部门id
      * @return result
      */
-    @DeleteMapping("/depts")
+    @DeleteMapping
     public Result<Void> deleteDept(Integer id) {
         log.info("根据id删除部门{}", id);
         deptService.deleteById(id);
@@ -48,7 +49,7 @@ public class DeptController {
      * @param dept RequestBody中的数据
      * @return result
      */
-    @PostMapping("/depts")
+    @PostMapping
     public Result<Void> addDept(@RequestBody Dept dept) {
         log.info("新增部门{}", dept);
         deptService.addDept(dept);
@@ -60,7 +61,7 @@ public class DeptController {
      * @param id 需要查询的部门id
      * @return result<Dept>
      */
-    @GetMapping("/depts/{id}")
+    @GetMapping("/{id}")
     public Result<Dept> selectById(@PathVariable Integer id) {
         log.info("根据id查询部门{}", id);
         Dept dept = deptService.selectById(id);
@@ -72,7 +73,7 @@ public class DeptController {
      * @param dept 请求数据封装的Dept实体对象
      * @return result
      */
-    @PutMapping("/depts")
+    @PutMapping
     public Result<Void> updateDept(@RequestBody Dept dept) {
         log.info("修改部门信息{}", dept);
         deptService.updateDept(dept);
