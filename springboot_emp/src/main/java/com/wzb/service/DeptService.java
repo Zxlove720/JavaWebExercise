@@ -12,4 +12,7 @@ public interface DeptService {
 
     void addDept(Dept dept);
 
+    Dept selectById(Integer id);
+
+    void updateDept(Dept dept);
 }

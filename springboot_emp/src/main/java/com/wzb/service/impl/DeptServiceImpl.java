@@ -47,4 +47,23 @@ public class DeptServiceImpl implements DeptService {
         dept.setUpdateTime(LocalDateTime.now());
         deptMapper.insertDept(dept);
     }
-}
+
+    /**
+     * 根据id查询部门
+     * @param id 部门id
+     * @return dept实体对象
+     */
+    @Override
+    public Dept selectById(Integer id) {
+        return deptMapper.selectById(id);
+    }
+
+    /**
+     * 修改部门信息
+     * @param dept Dept实体对象
+     */
+    public void updateDept(Dept dept) {
+        dept.setUpdateTime(LocalDateTime.now());
+        deptMapper.updateDept(dept);
+    }
+ }
