@@ -26,4 +26,13 @@ public class DeptServiceImpl implements DeptService {
     public List<Dept> selectAllDept() {
         return deptMapper.selectAllDept();
     }
+
+    /**
+     * 根据id删除部门
+     * @param id 部门id
+     */
+    @Override
+    public void deleteById(Integer id) {
+        deptMapper.deleteById(id);
+    }
 }
