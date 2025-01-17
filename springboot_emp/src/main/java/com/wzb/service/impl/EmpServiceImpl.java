@@ -11,6 +11,8 @@ import com.wzb.pojo.PageResult;
 import com.wzb.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.time.LocalDateTime;
@@ -79,6 +81,8 @@ public class EmpServiceImpl implements EmpService {
      * @param emp 员工实体对象
      */
     @Override
+    // 开启Spring事务机制 设置回滚类型为所有异常 事务传播机制为REQUIRES_NEW
+    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRES_NEW)
     public void addEmp(Emp emp) {
         // 为新增员工补全属性
         emp.setCreateTime(LocalDateTime.now());
