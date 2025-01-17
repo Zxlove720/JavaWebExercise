@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * 员工信息
@@ -30,4 +31,11 @@ public class Emp {
     private Integer deptId;
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
+
+    // 以下数据是不需要展示在前端页面的
+    // 封装部门名称
+    private String deptName;
+
+    // 封装员工的工作经历
+    private List<EmpExpr> exprList;
 }

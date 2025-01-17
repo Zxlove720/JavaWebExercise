@@ -9,4 +9,6 @@ public interface EmpService {
 
     PageResult<Emp> selectAllEmp(EmpQueryParam empQueryParam);
 
+    void addEmp(Emp emp);
+
 }

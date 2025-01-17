@@ -2,7 +2,9 @@ package com.wzb.mapper;
 
 import com.wzb.pojo.Emp;
 import com.wzb.pojo.EmpQueryParam;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
 import java.time.LocalDate;
@@ -33,5 +35,16 @@ public interface EmpMapper {
      * 使用PageHelper插件时，无需在Mapper接口中提供起始记录start 和 pageSize等参数
      */
     List<Emp> selectAllEmp(EmpQueryParam empQueryParam);
+
+    /**
+     * 新增员工
+     * @param emp 员工实体对象
+     */
+    @Insert("insert into emp(username, name, gender, phone, job, salary, " +
+            "image, entry_date, dept_id, create_time, update_time) values (#{username}, #{name}, #{gender}, #{phone}, " +
+            "#{job}, #{salary}, #{image}, #{entryDate}, #{deptId}, #{createTime}, #{updateTime})")
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    // 添加员工工作经历时需要使用员工id，MyBatis可以设置主键返回，可以返回id主键
+    void insertEmp(Emp emp);
 
 }

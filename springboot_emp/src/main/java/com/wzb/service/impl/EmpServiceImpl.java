@@ -2,14 +2,18 @@ package com.wzb.service.impl;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.wzb.mapper.EmpExprMapper;
 import com.wzb.mapper.EmpMapper;
 import com.wzb.pojo.Emp;
+import com.wzb.pojo.EmpExpr;
 import com.wzb.pojo.EmpQueryParam;
 import com.wzb.pojo.PageResult;
 import com.wzb.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -20,9 +24,12 @@ public class EmpServiceImpl implements EmpService {
 
     private final EmpMapper empMapper;
 
+    private final EmpExprMapper empExprMapper;
+
     @Autowired
-    public EmpServiceImpl(EmpMapper empMapper) {
+    public EmpServiceImpl(EmpMapper empMapper, EmpExprMapper empExprMapper) {
         this.empMapper = empMapper;
+        this.empExprMapper = empExprMapper;
     }
 
 //    /**
@@ -65,5 +72,26 @@ public class EmpServiceImpl implements EmpService {
         // 通过getTotal方法获取总记录数
         // 通过getResult方法获取分页查询结果
         return new PageResult<>(p.getTotal(), p.getResult());
+    }
+
+    /**
+     * 新增员工
+     * @param emp 员工实体对象
+     */
+    @Override
+    public void addEmp(Emp emp) {
+        // 为新增员工补全属性
+        emp.setCreateTime(LocalDateTime.now());
+        emp.setUpdateTime(LocalDateTime.now());
+        // 新增员工
+        empMapper.insertEmp(emp);
+        // 批量添加员工工作经历
+        Integer empId = emp.getId();
+        List<EmpExpr> exprList = emp.getExprList();
+        // CollectionUtils.isEmpty不但会检查集合是否为空，还会检查集合是否为null
+        if (!CollectionUtils.isEmpty(exprList)) {
+            exprList.forEach(empExpr -> empExpr.setEmpId(empId));
+            empExprMapper.insertBatch(exprList);
+        }
     }
 }

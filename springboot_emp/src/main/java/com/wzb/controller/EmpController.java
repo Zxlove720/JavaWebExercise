@@ -8,10 +8,7 @@ import com.wzb.pojo.Result;
 import com.wzb.service.EmpService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 
 
 @Slf4j
@@ -62,6 +59,18 @@ public class EmpController {
         log.info("分页查询员工信息，请求参数：{}", empQueryParam);
         PageResult<Emp> pageResult = empService.selectAllEmp(empQueryParam);
         return Result.success(pageResult);
+    }
+
+    /**
+     * 新增一个员工
+     * @param emp 员工实体对象
+     * @return Result<Void>
+     */
+    @PostMapping
+    public Result<Void> addEmp(@RequestBody Emp emp)  {
+        log.info("新增一个员工：{}", emp);
+        empService.addEmp(emp);
+        return Result.success();
     }
 
 }
