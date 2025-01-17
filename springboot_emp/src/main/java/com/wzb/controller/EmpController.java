@@ -46,8 +46,8 @@ public class EmpController {
         // 记录日志
         log.info("分页查询员工信息，page = {}，pageSize = {}", page, pageSize);
         log.info("查询条件：name：{}， gender：{}，begin：{}，end：{}", name, (gender == 1 ? "男" : "女"), begin, end);
-
-        PageResult<Emp> pageResult = empService.selectAllEmp(page, pageSize);
+        // 加入查询条件的分页查询
+        PageResult<Emp> pageResult = empService.selectAllEmp(page, pageSize, name, gender, begin, end);
         return Result.success(pageResult);
     }
 

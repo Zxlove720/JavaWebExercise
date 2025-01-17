@@ -4,6 +4,7 @@ import com.wzb.pojo.Emp;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Mapper
@@ -30,7 +31,6 @@ public interface EmpMapper {
      * 使用PageHelper插件分页查询员工信息
      * 使用PageHelper插件时，无需在Mapper接口中提供起始记录start 和 pageSize等参数
      */
-    @Select("select * from emp as e left join dept as d on e.dept_id = d.id")
-    List<Emp> selectAllEmp();
+    List<Emp> selectAllEmp(String name, Integer gender, LocalDate begin, LocalDate end);
 
 }
