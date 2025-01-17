@@ -4,12 +4,12 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.wzb.mapper.EmpMapper;
 import com.wzb.pojo.Emp;
+import com.wzb.pojo.EmpQueryParam;
 import com.wzb.pojo.PageResult;
 import com.wzb.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -49,18 +49,16 @@ public class EmpServiceImpl implements EmpService {
     /**
      * 使用PageHelper插件进行员工信息分页查询
      * 加入分页查询的查询条件
-     * @param page 起始页码
-     * @param pageSize 每页最多记录数
-     * @return PageResult<Emp>
+     *
+     * @param empQueryParam@return PageResult<Emp>
      */
     @Override
-    public PageResult<Emp> selectAllEmp(Integer page, Integer pageSize, String name,
-                                        Integer gender, LocalDate begin, LocalDate end) {
+    public PageResult<Emp> selectAllEmp(EmpQueryParam empQueryParam) {
         // 使用PageHelper分页插件
         // 设置分页参数
-        PageHelper.startPage(page, pageSize);
+        PageHelper.startPage(empQueryParam.getPage(), empQueryParam.getPageSize());
         // 查询
-        List<Emp> empList = empMapper.selectAllEmp(name, gender, begin, end);
+        List<Emp> empList = empMapper.selectAllEmp(empQueryParam);
         // 转换查询结果
         Page<Emp> p = (Page<Emp>) empList;
         // 封装查询结果到PageResult对象中

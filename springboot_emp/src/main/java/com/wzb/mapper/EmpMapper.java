@@ -1,6 +1,7 @@
 package com.wzb.mapper;
 
 import com.wzb.pojo.Emp;
+import com.wzb.pojo.EmpQueryParam;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -31,6 +32,6 @@ public interface EmpMapper {
      * 使用PageHelper插件分页查询员工信息
      * 使用PageHelper插件时，无需在Mapper接口中提供起始记录start 和 pageSize等参数
      */
-    List<Emp> selectAllEmp(String name, Integer gender, LocalDate begin, LocalDate end);
+    List<Emp> selectAllEmp(EmpQueryParam empQueryParam);
 
 }
