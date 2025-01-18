@@ -46,5 +46,4 @@ public interface EmpMapper {
     @Options(useGeneratedKeys = true, keyProperty = "id")
     // 添加员工工作经历时需要使用员工id，MyBatis可以设置主键返回，可以返回id主键
     void insertEmp(Emp emp);
-
 }
