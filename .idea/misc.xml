@@ -22,11 +22,13 @@
         <option value="$PROJECT_DIR$/JavaWeb12_Logback/pom.xml" />
         <option value="$PROJECT_DIR$/sprintboot_emp/pom.xml" />
         <option value="$PROJECT_DIR$/springboot_emp/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaWeb13_login/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/JavaWeb09_FileAndOSS/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaWeb13_login/pom.xml" />
         <option value="$PROJECT_DIR$/Java_Web06_develop/pom.xml" />
         <option value="$PROJECT_DIR$/springboot01_simple_demo/pom.xml" />
         <option value="$PROJECT_DIR$/sprintboot_emp/pom.xml" />

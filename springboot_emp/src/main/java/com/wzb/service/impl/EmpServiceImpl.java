@@ -4,10 +4,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.wzb.mapper.EmpExprMapper;
 import com.wzb.mapper.EmpMapper;
-import com.wzb.pojo.Emp;
-import com.wzb.pojo.EmpExpr;
-import com.wzb.pojo.EmpQueryParam;
-import com.wzb.pojo.PageResult;
+import com.wzb.pojo.*;
 import com.wzb.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -97,5 +94,19 @@ public class EmpServiceImpl implements EmpService {
             exprList.forEach(empExpr -> empExpr.setEmpId(empId));
             empExprMapper.insertBatch(exprList);
         }
+    }
+
+    /**
+     * 员工登录
+     * @param emp 登录请求数据封装的Emp实体对象
+     * @return LoginInfo员工登录信息
+     */
+    @Override
+    public LoginInfo login(Emp emp) {
+        Emp empLogin = empMapper.getUserByUsernameAndPassword(emp);
+        if (empLogin != null) {
+            return new LoginInfo(empLogin.getId(), empLogin.getUsername(), empLogin.getName(), "");
+        }
+        return null;
     }
 }
