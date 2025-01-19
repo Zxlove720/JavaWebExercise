@@ -42,5 +42,4 @@ public class CookieController {
         }
         return Result.success();
     }
-
 }

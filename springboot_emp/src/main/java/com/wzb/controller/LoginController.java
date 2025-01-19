@@ -37,5 +37,4 @@ public class LoginController {
         log.info("员工{}登录失败", emp.getUsername());
         return Result.error("用户名或密码错误");
     }
-
 }
