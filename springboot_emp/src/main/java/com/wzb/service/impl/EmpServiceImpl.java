@@ -6,6 +6,7 @@ import com.wzb.mapper.EmpExprMapper;
 import com.wzb.mapper.EmpMapper;
 import com.wzb.pojo.*;
 import com.wzb.service.EmpService;
+import com.wzb.utils.JWTUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -13,7 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 员工管理
@@ -75,6 +78,7 @@ public class EmpServiceImpl implements EmpService {
 
     /**
      * 新增员工
+     *
      * @param emp 员工实体对象
      */
     @Override
@@ -98,14 +102,21 @@ public class EmpServiceImpl implements EmpService {
 
     /**
      * 员工登录
+     *
      * @param emp 登录请求数据封装的Emp实体对象
      * @return LoginInfo员工登录信息
      */
     @Override
     public LoginInfo login(Emp emp) {
         Emp empLogin = empMapper.getUserByUsernameAndPassword(emp);
+        Map<String, Object> claims = new HashMap<>();
         if (empLogin != null) {
-            return new LoginInfo(empLogin.getId(), empLogin.getUsername(), empLogin.getName(), "");
+            Integer id = empLogin.getId();
+            String username = empLogin.getUsername();
+            String name = empLogin.getName();
+            claims.put("id", id);
+            claims.put("username", username);
+            return new LoginInfo(id, username, name, JWTUtils.generateJWT(claims));
         }
         return null;
     }
