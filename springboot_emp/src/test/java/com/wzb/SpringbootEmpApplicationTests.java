@@ -1,5 +1,6 @@
 package com.wzb;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.extern.slf4j.Slf4j;
@@ -28,5 +29,14 @@ class SpringbootEmpApplicationTests {
                 .setExpiration(new Date(System.currentTimeMillis() + 12 * 3600 * 1000)) // 设置JWT令牌有效期
                 .compact(); // 生成令牌
         log.info("jwt令牌是：{}", jwt);
+    }
+
+    @Test
+    public void testParseJWT() {
+        Claims claims = Jwts.parser().setSigningKey("hello")
+                .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTAsInVzZXJuYW1lIjoid3piIiwiZXhwIjoxNzM3NDI1MTg" +
+                        "5fQ.cHdgtWD-BtrnM2Xnl418CcB_6h-rB2ogGSK8aT4T0dk")
+                .getBody();
+        log.info("JWT解析结果为：{}", claims);
     }
 }
