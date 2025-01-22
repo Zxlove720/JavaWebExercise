@@ -31,11 +31,14 @@ class SpringbootEmpApplicationTests {
         log.info("jwt令牌是：{}", jwt);
     }
 
+    /**
+     * 解析JWT令牌
+     */
     @Test
     public void testParseJWT() {
         Claims claims = Jwts.parser().setSigningKey("hello")
-                .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTAsInVzZXJuYW1lIjoid3piIiwiZXhwIjoxNzM3NDI1MTg" +
-                        "5fQ.cHdgtWD-BtrnM2Xnl418CcB_6h-rB2ogGSK8aT4T0dk")
+                .parseClaimsJws("eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTAsInVzZXJuYW1lIjoid3piIiwiZXhwIjoxNzM3NTk0NDgxfQ." +
+                        "m4BT-AR8cMCEmMJoNNL0iuyNCHylKdasuu77ETsLHcw")
                 .getBody();
         log.info("JWT解析结果为：{}", claims);
     }
