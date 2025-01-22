@@ -31,6 +31,4 @@ public class DemoInterceptor implements HandlerInterceptor {
                                 Exception ex) throws Exception {
         log.info("afterCompletion...");
     }
-
-
 }
