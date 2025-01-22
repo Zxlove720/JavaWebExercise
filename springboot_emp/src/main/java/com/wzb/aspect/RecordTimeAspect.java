@@ -23,7 +23,7 @@ public class RecordTimeAspect {
         // 记录方法结束时间
         Long end = System.currentTimeMillis();
         // 计算方法耗时
-        log.info("执行方法耗时：{}", end - begin);
+        log.info("执行方法耗时：{}ms", end - begin);
         return result;
     }
 }
