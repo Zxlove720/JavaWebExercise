@@ -1,5 +1,6 @@
 package com.wzb.controller;
 
+import com.wzb.annotation.LogOperation;
 import com.wzb.pojo.Emp;
 import com.wzb.pojo.LoginInfo;
 import com.wzb.pojo.Result;
@@ -27,6 +28,7 @@ public class LoginController {
     }
 
     @PostMapping
+    @LogOperation
     public Result<LoginInfo> login(@RequestBody Emp emp) {
         log.info("员工{}正在登录", emp.getUsername());
         LoginInfo loginInfo = empService.login(emp);

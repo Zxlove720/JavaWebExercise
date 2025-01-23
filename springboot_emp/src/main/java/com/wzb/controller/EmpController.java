@@ -1,6 +1,7 @@
 package com.wzb.controller;
 
 
+import com.wzb.annotation.LogOperation;
 import com.wzb.pojo.Emp;
 import com.wzb.pojo.EmpQueryParam;
 import com.wzb.pojo.PageResult;
@@ -55,6 +56,7 @@ public class EmpController {
      * @return Result<PageResult<Emp>>
      */
     @GetMapping
+    @LogOperation
     public Result<PageResult<Emp>> selectAllEmp(EmpQueryParam empQueryParam) {
         log.info("分页查询员工信息，请求参数：{}", empQueryParam);
         PageResult<Emp> pageResult = empService.selectAllEmp(empQueryParam);
@@ -67,6 +69,7 @@ public class EmpController {
      * @return Result<Void>
      */
     @PostMapping
+    @LogOperation
     public Result<Void> addEmp(@RequestBody Emp emp)  {
         log.info("新增一个员工：{}", emp);
         empService.addEmp(emp);

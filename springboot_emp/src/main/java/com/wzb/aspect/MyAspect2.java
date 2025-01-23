@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * 测试AOP
  */
 @Slf4j
-@Aspect
+// @Aspect
 @Component
 @Order(0)
 public class MyAspect2 {
@@ -32,7 +32,8 @@ public class MyAspect2 {
     /**
      * 切入点方法
      */
-    @Pointcut("execution(* com.wzb.service.impl.EmpServiceImpl.*(..))")
+    @Pointcut("execution(* com.wzb.service.impl.EmpServiceImpl.addEmp(..)) || " +
+            "execution(* com.wzb.service.impl.EmpServiceImpl.login(..))")
     public void pt() {}
 
     /**
