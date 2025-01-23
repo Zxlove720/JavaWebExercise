@@ -5,6 +5,7 @@ import com.wzb.pojo.Emp;
 import com.wzb.pojo.LoginInfo;
 import com.wzb.pojo.Result;
 import com.wzb.service.EmpService;
+import com.wzb.utils.ThreadUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,6 +35,7 @@ public class LoginController {
         LoginInfo loginInfo = empService.login(emp);
         if (loginInfo != null) {
             log.info("员工{}登录成功", emp.getUsername());
+            ThreadUtils.setCurrentId(loginInfo.getId());
             return Result.success(loginInfo);
         }
         log.info("员工{}登录失败", emp.getUsername());

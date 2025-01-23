@@ -1,7 +1,9 @@
 package com.wzb.aspect;
 
+import ch.qos.logback.core.joran.conditional.ThenAction;
 import com.wzb.mapper.OperateLogMapper;
 import com.wzb.pojo.OperateLog;
+import com.wzb.utils.ThreadUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -17,7 +19,7 @@ import java.util.Arrays;
  */
 @Slf4j
 @Component
-//@Aspect
+@Aspect
 public class LogAspect {
 
     private final OperateLogMapper operateLogMapper;
@@ -38,7 +40,10 @@ public class LogAspect {
 
         // 构建日志对象
         OperateLog operateLog = new OperateLog();
-        operateLog.setOperateEmpId(getCurrentUserId());
+        Integer empId = getCurrentUserId();
+        if (empId != null) {
+            operateLog.setOperateEmpId(empId);
+        }
         operateLog.setOperateTime(LocalDateTime.now());
         operateLog.setClassName(pjp.getTarget().getClass().getName());
         operateLog.setMethodName(pjp.getSignature().getName());
@@ -51,8 +56,12 @@ public class LogAspect {
         return result;
     }
 
-    //TODO待完善的获取当前用户id的方法
-    private int getCurrentUserId() {
-        return 1;
+    /**
+     * 通过ThreadLocal获取当前线程的用户id
+     *
+     * @return 用户id
+     */
+    private Integer getCurrentUserId() {
+        return ThreadUtils.getCurrentId();
     }
 }
