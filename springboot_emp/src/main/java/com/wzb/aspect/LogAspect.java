@@ -17,7 +17,7 @@ import java.util.Arrays;
  */
 @Slf4j
 @Component
-@Aspect
+//@Aspect
 public class LogAspect {
 
     private final OperateLogMapper operateLogMapper;
