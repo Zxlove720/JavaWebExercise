@@ -13,7 +13,7 @@ import java.io.IOException;
  * 令牌校验过滤器（登录过滤器）
  */
 @Slf4j
-// @WebFilter(urlPatterns = "/*")
+@WebFilter(urlPatterns = "/*")
 public class LoginFilter implements Filter {
 
     @Override
