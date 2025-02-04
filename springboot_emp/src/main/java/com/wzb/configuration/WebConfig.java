@@ -14,16 +14,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
 
     // 定义需要配置的拦截器对象
-    private final DemoInterceptor demoInterceptor;
+    private final LoginInterceptor loginInterceptor;
 
     @Autowired
-    public WebConfig(DemoInterceptor demoInterceptor) {
-        this.demoInterceptor = demoInterceptor;
+    public WebConfig(LoginInterceptor loginInterceptor) {
+        this.loginInterceptor = loginInterceptor;
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // 注册自定义拦截器对象
-       registry.addInterceptor(demoInterceptor).addPathPatterns("/**"); // 设置拦截路径
+       registry.addInterceptor(loginInterceptor).addPathPatterns("/**").excludePathPatterns("/login"); // 设置拦截路径
     }
 }

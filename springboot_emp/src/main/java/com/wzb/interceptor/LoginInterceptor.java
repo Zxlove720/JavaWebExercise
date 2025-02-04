@@ -11,6 +11,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ * 登录拦截器
+ */
 @Slf4j
 @Component
 public class LoginInterceptor implements HandlerInterceptor {
