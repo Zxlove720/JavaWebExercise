@@ -110,6 +110,7 @@ public class EmpServiceImpl implements EmpService {
     public LoginInfo login(Emp emp) {
         Emp empLogin = empMapper.getUserByUsernameAndPassword(emp);
         Map<String, Object> claims = new HashMap<>();
+        int a = 1 / 0;
         if (empLogin != null) {
             Integer id = empLogin.getId();
             String username = empLogin.getUsername();

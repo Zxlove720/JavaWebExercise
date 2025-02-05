@@ -11,23 +11,9 @@ import org.springframework.stereotype.Component;
  * 测试AOP
  */
 @Slf4j
-// @Aspect
+@Aspect
 @Component
-@Order(0)
 public class MyAspect2 {
-
-//    @Around("execution(* com.wzb.service.impl.EmpServiceImpl.*(..))")
-//    public Object recordTime(ProceedingJoinPoint pjp) throws Throwable {
-//        // 记录开始时间
-//        Long begin = System.currentTimeMillis();
-//        // 执行原始方法
-//        Object result = pjp.proceed();
-//        // 记录结束时间
-//        Long end = System.currentTimeMillis();
-//        // 计算耗时
-//        log.info("方法运行耗时：{}ms", (end - begin));
-//        return result;
-//    }
 
     /**
      * 切入点方法
@@ -86,6 +72,4 @@ public class MyAspect2 {
     public void afterThrowing(JoinPoint joinPoint) {
         log.info("MyAspect2 afterThrowing");
     }
-
-
 }

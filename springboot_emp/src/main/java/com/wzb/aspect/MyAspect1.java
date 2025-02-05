@@ -11,9 +11,8 @@ import org.springframework.stereotype.Component;
  * AOP通知类型测试
  */
 @Slf4j
-// @Aspect
+@Aspect
 @Component
-@Order(1)
 public class MyAspect1 {
 
     /**
@@ -22,7 +21,6 @@ public class MyAspect1 {
      */
     @Pointcut("execution(* com.wzb.service.impl.EmpServiceImpl.*(..))")
     private void pt() {}
-
 
     /**
      * Before 前置通知，在方法运行前执行
@@ -76,6 +74,4 @@ public class MyAspect1 {
     public void afterThrowing(JoinPoint joinPoint) {
         log.info("afterThrowing 异常通知");
     }
-
-
 }
