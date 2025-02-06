@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * AOP通知类型测试
  */
 @Slf4j
-@Aspect
+// @Aspect
 @Component
 public class MyAspect1 {
 
