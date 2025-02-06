@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * 测试AOP
  */
 @Slf4j
-@Aspect
+// @Aspect
 @Component
 public class MyAspect2 {
 
