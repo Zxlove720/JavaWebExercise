@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * 通过AOP统计员工操作的耗时
  */
 @Component
-// @Aspect // 将其标记为切面类
+@Aspect // 将其标记为切面类
 @Slf4j
 public class RecordTimeAspect {
     @Around("execution(* com.wzb.service.impl.EmpServiceImpl.*(..)) || execution(* com.wzb.service.impl.DeptServiceImpl.*(..))")
