@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import redis.clients.jedis.Jedis;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class redisTest {
 
     private Jedis jedis;
@@ -35,4 +38,20 @@ public class redisTest {
         System.out.println(name);
     }
 
+    /**
+     * 测试Hash数据类型
+     */
+    @Test
+    void testHash() {
+        // 插入hash数据
+        jedis.hset("user:1", "name", "杰克");
+        Map<String, String> map = new HashMap<>();
+        map.put("age", "18");
+        map.put("gender", "man");
+        long result = jedis.hset("user:1", map);
+        System.out.println(result);
+        // 获取数据
+        Map<String, String> map1 = jedis.hgetAll("user:1");
+        System.out.println(map1);
+    }
 }
