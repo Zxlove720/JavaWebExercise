@@ -31,7 +31,7 @@ public class redisTest {
     @Test
     void testString() {
         // 存
-        String result = jedis.set("name", "李四");
+        String result = jedis.set("name", "张三");
         System.out.println(result);
         // 取
         String name = jedis.get("name");
