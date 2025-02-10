@@ -44,7 +44,7 @@ public class redisTest {
     @Test
     void testHash() {
         // 插入hash数据
-        jedis.hset("user:1", "name", "杰克");
+        jedis.hset("user:1", "name", "rose");
         Map<String, String> map = new HashMap<>();
         map.put("age", "18");
         map.put("gender", "man");
