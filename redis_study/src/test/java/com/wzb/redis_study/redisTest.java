@@ -3,7 +3,6 @@ package com.wzb.redis_study;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import redis.clients.jedis.Jedis;
 
 import java.util.HashMap;
@@ -19,7 +18,7 @@ public class redisTest {
     @BeforeEach
     void setUp() {
         // 建立连接
-        jedis = new Jedis("192.168.181.129", 6379);
+        jedis = RedisFactory.getJedis();
         // 设置密码
         jedis.auth("123456");
         // 选择库（默认0）
