@@ -7,7 +7,7 @@ import redis.clients.jedis.JedisPoolConfig;
 /**
  * Jedis连接池
  */
-public class RedisFactory {
+public class JedisFactory {
 
     private static final JedisPool jedisPool;
 

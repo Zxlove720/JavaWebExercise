@@ -8,7 +8,7 @@ import redis.clients.jedis.Jedis;
 import java.util.HashMap;
 import java.util.Map;
 
-public class redisTest {
+public class JedisTest {
 
     private Jedis jedis;
 
@@ -18,7 +18,7 @@ public class redisTest {
     @BeforeEach
     void setUp() {
         // 建立连接
-        jedis = RedisFactory.getJedis();
+        jedis = JedisFactory.getJedis();
         // 设置密码
         jedis.auth("123456");
         // 选择库（默认0）
