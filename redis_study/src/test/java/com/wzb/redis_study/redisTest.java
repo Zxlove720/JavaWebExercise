@@ -1,5 +1,6 @@
 package com.wzb.redis_study;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
@@ -53,5 +54,15 @@ public class redisTest {
         // 获取数据
         Map<String, String> map1 = jedis.hgetAll("user:1");
         System.out.println(map1);
+    }
+
+    /**
+     * 关闭Jedis客户端
+     */
+    @AfterEach
+    void turnDown() {
+        if (jedis != null) {
+            jedis.close();
+        }
     }
 }
