@@ -54,7 +54,7 @@ public class SpringBootRedisTest {
     // 序列化对象
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    
+
     @Test
     void testUser() throws JsonProcessingException {
         User user = new User("虎哥", 21);
