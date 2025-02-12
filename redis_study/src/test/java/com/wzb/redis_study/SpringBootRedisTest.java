@@ -39,6 +39,9 @@ public class SpringBootRedisTest {
         System.out.println(o);
     }
 
+    /**
+     * 测试存储对象
+     */
     @Test
     void testObject() {
         // 写入一条String数据，value是对象
