@@ -25,4 +25,34 @@ class JavaWeb13MyBatisPlusApplicationTests {
         System.out.println(emp);
     }
 
+    /**
+     * 增加测试
+     */
+    @Test
+    public void insertTest() {
+        Emp emp = new Emp();
+        emp.setUsername("test");
+        emp.setPassword("123456");
+        empMapper.insert(emp);
+    }
+
+    /**
+     * 删除测试
+     */
+    @Test
+    public void deleteTest() {
+        empMapper.deleteById("38");
+    }
+
+    /**
+     * 修改测试
+     */
+    @Test
+    public void updateTest() {
+        Emp emp = new Emp();
+        emp.setId(1);
+        emp.setUsername("张三");
+        empMapper.updateById(emp);
+    }
+
 }
