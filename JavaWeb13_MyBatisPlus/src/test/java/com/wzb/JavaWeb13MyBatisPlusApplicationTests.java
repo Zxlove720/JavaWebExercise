@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @SpringBootTest
 class JavaWeb13MyBatisPlusApplicationTests {
 
@@ -27,8 +30,18 @@ class JavaWeb13MyBatisPlusApplicationTests {
     @Test
     public void insertTest() {
         Emp emp = new Emp();
-        emp.setUsername("test");
+        emp.setId(100);
+        emp.setUsername("测试员工");
         emp.setPassword("123456");
+        emp.setName("测试员工");
+        emp.setGender(0);
+        emp.setPhone("1310000001");
+        emp.setImage("https://123.com");
+        emp.setJob(1);
+        emp.setEntryDate(LocalDate.now());
+        emp.setDeptId(1);
+        emp.setCreateTime(LocalDateTime.now());
+        emp.setUpdateTime(LocalDateTime.now());
         empMapper.insert(emp);
     }
 
@@ -37,7 +50,7 @@ class JavaWeb13MyBatisPlusApplicationTests {
      */
     @Test
     public void deleteTest() {
-        empMapper.deleteById("38");
+        empMapper.deleteById("100");
     }
 
     /**

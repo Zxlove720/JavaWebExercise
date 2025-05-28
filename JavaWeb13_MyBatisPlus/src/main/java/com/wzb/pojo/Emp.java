@@ -16,6 +16,7 @@ public class Emp {
     private String password;
     private String name;
     private Integer gender;
+    private String phone;
     private String image;
     private Integer job;
     private LocalDate entryDate;
