@@ -9,12 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class JavaWeb13MyBatisPlusApplicationTests {
 
-    private final EmpMapper empMapper;
-
     @Autowired
-    public JavaWeb13MyBatisPlusApplicationTests(EmpMapper empMapper) {
-        this.empMapper = empMapper;
-    }
+    private EmpMapper empMapper;
 
     /**
      * 查询测试

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: JavaWeb13MyBatisPlus
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/web_study
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+
+
+
