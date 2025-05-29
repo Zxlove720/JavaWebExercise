@@ -1,5 +1,9 @@
 package com.wzb.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,8 +14,11 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@TableName("emp")
 public class Emp {
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     private Integer id;
+    @TableField("name")
     private String username;
     private String password;
     private String name;
