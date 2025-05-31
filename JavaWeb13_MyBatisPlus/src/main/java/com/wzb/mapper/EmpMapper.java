@@ -5,7 +5,7 @@ import com.wzb.pojo.Emp;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 
+ * 员工Mapper
  */
 @Mapper
 public interface EmpMapper extends BaseMapper<Emp> {
