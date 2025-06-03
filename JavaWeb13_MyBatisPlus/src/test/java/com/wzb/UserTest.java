@@ -1,5 +1,6 @@
 package com.wzb;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.wzb.mapper.UserMapper;
@@ -9,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @SpringBootTest
@@ -27,6 +26,16 @@ public class UserTest {
     public void testQuery() {
         QueryWrapper<User> queryWrapper = new QueryWrapper<User>()
                 .lt("balance", 5000);
+        List<User> userList = userMapper.selectList(queryWrapper);
+        for (User user : userList) {
+            System.out.println(user);
+        }
+    }
+
+    @Test
+    public void testLambdaQuery() {
+        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<User>()
+                .gt(User::getBalance, 5000);
         List<User> userList = userMapper.selectList(queryWrapper);
         for (User user : userList) {
             System.out.println(user);
