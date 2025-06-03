@@ -13,22 +13,23 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public void addUser(User user) {
-
+        save(user);
     }
 
     @Override
     public void deleteUser(Integer id) {
-
+        removeById(id);
     }
 
     @Override
     public User queryUser(Integer id) {
-        return null;
+        return getById(id);
     }
 
     @Override
     public List<User> queryBatchUser(List<Integer> ids) {
-        return List.of();
+        List<User> userList = queryBatchUser(ids);
+        return userList;
     }
 
     @Override
