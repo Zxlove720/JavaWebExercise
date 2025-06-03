@@ -20,17 +20,17 @@ public class UserController {
 
     @PostMapping
     public void addUser(@RequestBody User user) {
-        userService.addUser(user);
+        userService.save(user);
     }
 
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Integer id) {
-        userService.deleteUser(id);
+        userService.removeById(id);
     }
 
     @GetMapping("/{id}")
     public User queryUser(@PathVariable Integer id) {
-        return userService.queryUser(id);
+        return userService.getById(id);
     }
 
     @PostMapping

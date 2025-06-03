@@ -12,27 +12,6 @@ import java.util.List;
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
     @Override
-    public void addUser(User user) {
-        save(user);
-    }
-
-    @Override
-    public void deleteUser(Integer id) {
-        removeById(id);
-    }
-
-    @Override
-    public User queryUser(Integer id) {
-        return getById(id);
-    }
-
-    @Override
-    public List<User> queryBatchUser(List<Integer> ids) {
-        List<User> userList = queryBatchUser(ids);
-        return userList;
-    }
-
-    @Override
     public void updateBalance(Integer id, Integer amount) {
 
     }
