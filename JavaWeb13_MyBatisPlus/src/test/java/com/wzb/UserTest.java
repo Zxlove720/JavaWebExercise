@@ -59,10 +59,9 @@ public class UserTest {
 
     @Test
     public void testUpdate() {
-        List<Integer> ids = List.of(1, 2, 3, 4, 5, 6);
+        List<Integer> ids = List.of(7, 8, 9, 10);
         UpdateWrapper<User> updateWrapper = new UpdateWrapper<User>()
-                .in("id", ids)
-                .setSql("balance = balance - 2000");
-        userMapper.update(updateWrapper);
+                .in("id", ids);
+        userMapper.updateBalance(updateWrapper, 2000);
     }
 }
