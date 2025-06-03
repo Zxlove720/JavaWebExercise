@@ -6,9 +6,34 @@ import com.wzb.pojo.User;
 import com.wzb.service.UserService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
+    @Override
+    public void addUser(User user) {
 
+    }
+
+    @Override
+    public void deleteUser(Integer id) {
+
+    }
+
+    @Override
+    public User queryUser(Integer id) {
+        return null;
+    }
+
+    @Override
+    public List<User> queryBatchUser(List<Integer> ids) {
+        return List.of();
+    }
+
+    @Override
+    public void updateBalance(Integer id, Integer amount) {
+
+    }
 
 }
