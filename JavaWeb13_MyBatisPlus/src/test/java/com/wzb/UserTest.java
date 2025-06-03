@@ -1,5 +1,7 @@
 package com.wzb;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.wzb.mapper.UserMapper;
 import com.wzb.pojo.User;
 import org.junit.jupiter.api.Test;
@@ -23,7 +25,12 @@ public class UserTest {
 
     @Test
     public void testQuery() {
-
+        QueryWrapper<User> queryWrapper = new QueryWrapper<User>()
+                .lt("balance", 5000);
+        List<User> userList = userMapper.selectList(queryWrapper);
+        for (User user : userList) {
+            System.out.println(user);
+        }
     }
 
     @Test
@@ -52,6 +59,10 @@ public class UserTest {
 
     @Test
     public void testUpdate() {
-
+        List<Integer> ids = List.of(1, 2, 3, 4, 5, 6);
+        UpdateWrapper<User> updateWrapper = new UpdateWrapper<User>()
+                .in("id", ids)
+                .setSql("balance = balance - 2000");
+        userMapper.update(updateWrapper);
     }
 }
