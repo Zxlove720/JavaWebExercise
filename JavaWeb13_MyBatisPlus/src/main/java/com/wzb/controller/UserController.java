@@ -23,22 +23,22 @@ public class UserController {
         userService.addUser(user);
     }
 
-    @DeleteMapping("/#{id}")
+    @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Integer id) {
         userService.deleteUser(id);
     }
 
-    @GetMapping("/#{id}")
+    @GetMapping("/{id}")
     public User queryUser(@PathVariable Integer id) {
         return userService.queryUser(id);
     }
 
-    @PostMapping("/batch")
-    public List<User> queryBatchUsers(@RequestBody List<Integer> ids) {
-        return userService.queryBatchUser(ids);
+    @PostMapping
+    public List<User> queryBatchUsers(@RequestParam("ids") List<Integer> ids) {
+        return userService.listByIds(ids);
     }
 
-    @PutMapping("/#{id}/deduction/#{amount}")
+    @PutMapping("/{id}/deduction/{amount}")
     public void updateBalance(@PathVariable Integer id, @PathVariable Integer amount) {
         userService.updateBalance(id, amount);
     }
