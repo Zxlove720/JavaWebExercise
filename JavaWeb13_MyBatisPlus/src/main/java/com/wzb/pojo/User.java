@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 public class User {
 
     @TableId(value = "id", type = IdType.AUTO)
-    private int id;
+    private Integer id;
 
     private String username;
 
@@ -27,7 +27,7 @@ public class User {
 
     private String phone;
 
-    private int balance;
+    private Integer balance;
 
     private LocalDateTime createTime;
 
