@@ -33,7 +33,7 @@ public class UserController {
         return userService.getById(id);
     }
 
-    @PostMapping
+    @GetMapping
     public List<User> queryBatchUsers(@RequestParam("ids") List<Integer> ids) {
         return userService.listByIds(ids);
     }
