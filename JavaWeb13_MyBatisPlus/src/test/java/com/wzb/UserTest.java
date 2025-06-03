@@ -60,6 +60,14 @@ public class UserTest {
     @Test
     public void testUpdate() {
         List<Integer> ids = List.of(7, 8, 9, 10);
+        UpdateWrapper<User> updateWrapper = new UpdateWrapper<User>()
+                .in("id", ids);
+        userMapper.updateBalance(updateWrapper, 2000);
+    }
+
+    @Test
+    public void testLambdaUpdate() {
+        List<Integer> ids = List.of(7, 8, 9, 10);
         LambdaUpdateWrapper<User> updateWrapper = new LambdaUpdateWrapper<User>()
                 .in(User::getId, ids);
         userMapper.updateBalance(updateWrapper, 2000);
