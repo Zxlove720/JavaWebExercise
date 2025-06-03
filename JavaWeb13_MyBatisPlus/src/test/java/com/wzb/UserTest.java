@@ -2,6 +2,7 @@ package com.wzb;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.wzb.mapper.UserMapper;
 import com.wzb.pojo.User;
@@ -59,8 +60,8 @@ public class UserTest {
     @Test
     public void testUpdate() {
         List<Integer> ids = List.of(7, 8, 9, 10);
-        UpdateWrapper<User> updateWrapper = new UpdateWrapper<User>()
-                .in("id", ids);
+        LambdaUpdateWrapper<User> updateWrapper = new LambdaUpdateWrapper<User>()
+                .in(User::getId, ids);
         userMapper.updateBalance(updateWrapper, 2000);
     }
 }
