@@ -16,6 +16,7 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     # 显示 SQL 日志（调试用）
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
   # 指定 Mapper XML 文件路径（若使用 XML）
   mapper-locations: classpath*:/mapper/**/*.xml
   # 实体类别名扫描包（简化 XML 中 resultType 书写）
