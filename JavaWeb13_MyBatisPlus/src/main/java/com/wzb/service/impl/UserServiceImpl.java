@@ -54,9 +54,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         // 3.进行MyBatisPlus的分页查询
         Page<User> resultPage = page(page);
         // 3.1获取总记录数
-        System.out.println(resultPage.getTotal());
+        System.out.println("总记录数" + resultPage.getTotal());
         // 3.2获取总页数
-        System.out.println(resultPage.getPages());
+        System.out.println("总页数" + resultPage.getPages());
         // 3.3获取总记录数
         return resultPage.getRecords();
     }

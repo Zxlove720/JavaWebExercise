@@ -41,7 +41,7 @@ public class UserController {
         return userService.listByIds(ids);
     }
 
-    @GetMapping
+    @GetMapping("/page")
     public List<User> pageQuery(PageQueryDTO pageQueryDTO) {
         return userService.pageQuery(pageQueryDTO);
     }
