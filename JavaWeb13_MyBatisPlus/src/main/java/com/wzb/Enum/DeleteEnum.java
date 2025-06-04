@@ -2,10 +2,8 @@ package com.wzb.Enum;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 public enum DeleteEnum {
 
@@ -13,7 +11,7 @@ public enum DeleteEnum {
     NOT_DELETE(0, "未删除"),
     ;
 
-    private Integer value;
+    private final Integer value;
 
-    private String desc;
+    private final String desc;
 }
