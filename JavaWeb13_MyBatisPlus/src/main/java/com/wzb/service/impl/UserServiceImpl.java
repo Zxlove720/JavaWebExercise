@@ -35,9 +35,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     @Override
     public List<User> conditionQuery(UserQuery userQuery) {
         return lambdaQuery()
-                .like(userQuery.getUsername() != null, User::getUsername, userQuery.getUsername())
+                .like(userQuery.getUsername() != null && !userQuery.getUsername().isEmpty(), User::getUsername, userQuery.getUsername())
                 .ge(userQuery.getMinBalance() != null, User::getBalance, userQuery.getMinBalance())
-                .le(userQuery.getMinBalance() != null, User::getBalance, userQuery.getMinBalance())
+                .le(userQuery.getMaxBalance() != null, User::getBalance, userQuery.getMaxBalance())
                 .list();
     }
 
