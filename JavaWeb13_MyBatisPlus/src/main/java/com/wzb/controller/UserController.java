@@ -1,6 +1,7 @@
 package com.wzb.controller;
 
 import com.wzb.pojo.User;
+import com.wzb.pojo.UserQuery;
 import com.wzb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -41,5 +42,10 @@ public class UserController {
     @PutMapping("/{id}/deduction/{amount}")
     public void updateBalance(@PathVariable Integer id, @PathVariable Integer amount) {
         userService.updateBalance(id, amount);
+    }
+
+    @PostMapping("/query")
+    public List<User> conditionQuery(@RequestBody UserQuery userQuery) {
+        return userService.conditionQuery(userQuery);
     }
 }
