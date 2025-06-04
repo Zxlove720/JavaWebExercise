@@ -8,8 +8,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum DeleteEnum {
 
-    DELETE(1, "删除"),
     NOT_DELETE(0, "未删除"),
+    DELETE(1, "删除"),
     ;
 
     // 使用@EnumValue注解标记枚举中的哪一个值需要存入数据库
