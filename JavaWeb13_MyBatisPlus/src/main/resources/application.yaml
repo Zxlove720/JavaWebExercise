@@ -13,7 +13,6 @@ server:
 
 mybatis-plus:
   configuration:
-    # 开启驼峰命名映射（数据库字段 user_name → 实体类属性 userName）
     map-underscore-to-camel-case: true
     # 显示 SQL 日志（调试用）
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
@@ -21,6 +20,9 @@ mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
   # 实体类别名扫描包（简化 XML 中 resultType 书写）
   type-aliases-package: com.wzb.pojo
+  global-config:
+    db-config:
+      logic-delete-field: deleted
 
 
 
