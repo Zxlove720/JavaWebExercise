@@ -1,5 +1,6 @@
 package com.wzb.controller;
 
+import com.wzb.pojo.PageQueryDTO;
 import com.wzb.pojo.User;
 import com.wzb.pojo.UserQuery;
 import com.wzb.service.UserService;
@@ -38,6 +39,11 @@ public class UserController {
     @GetMapping
     public List<User> queryBatchUsers(@RequestParam("ids") List<Integer> ids) {
         return userService.listByIds(ids);
+    }
+
+    @GetMapping
+    public List<User> pageQuery(PageQueryDTO pageQueryDTO) {
+        return userService.pageQuery(pageQueryDTO);
     }
 
     @PutMapping("/{id}/deduction/{amount}")
