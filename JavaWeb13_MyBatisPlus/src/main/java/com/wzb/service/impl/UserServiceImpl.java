@@ -1,7 +1,6 @@
 package com.wzb.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wzb.mapper.UserMapper;
 import com.wzb.pojo.User;
