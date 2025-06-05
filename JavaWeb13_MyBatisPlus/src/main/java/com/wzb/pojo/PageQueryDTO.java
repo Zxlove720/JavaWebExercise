@@ -25,12 +25,10 @@ public class PageQueryDTO {
         Page<T> pageQuery = Page.of(page, pageSize);
         // 2.封装排序参数
         if (StringUtils.isNotBlank(sortedBy)) {
-            // 2.1传递了排序参数
-            if (isASC) {
-                pageQuery.addOrder(OrderItem.asc(sortedBy));
-            } else {
-                pageQuery.addOrder(OrderItem.desc(sortedBy));
-            }
+            OrderItem item = new OrderItem();
+            item.setColumn(sortedBy);
+            item.setAsc(isASC);
+            pageQuery.addOrder(item);
         } else {
             // 2.2排序参数为空，使用默认排序
             pageQuery.addOrder(items);
