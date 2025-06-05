@@ -38,4 +38,11 @@ public class PageQueryDTO {
         return pageQuery;
     }
 
+    public <T> Page<T> toPage(String sortedBy, Boolean isASC) {
+        OrderItem item = new OrderItem();
+        item.setColumn(sortedBy);
+        item.setAsc(isASC);
+        return toPage(item);
+    }
+
 }
