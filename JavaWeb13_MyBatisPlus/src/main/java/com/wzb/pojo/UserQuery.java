@@ -2,12 +2,14 @@ package com.wzb.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserQuery {
+public class UserQuery extends PageQueryDTO {
 
     private String username;
 

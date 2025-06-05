@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wzb.mapper.UserMapper;
-import com.wzb.pojo.PageQueryDTO;
 import com.wzb.pojo.User;
 import com.wzb.pojo.UserQuery;
 import com.wzb.service.UserService;
@@ -45,9 +44,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
-    public List<User> pageQuery(PageQueryDTO pageQueryDTO) {
+    public List<User> pageQuery(UserQuery userQuery) {
         // 1.构造分页查询核心参数Page
-        Page<User> page = Page.of(pageQueryDTO.getPage(), pageQueryDTO.getPageSize());
+        Page<User> page = Page.of(userQuery.getPage(), userQuery.getPageSize());
         // 2.封装排序参数，使用OrderItem
         page.addOrder(OrderItem.desc("balance"));
         page.addOrder(OrderItem.asc("id"));
