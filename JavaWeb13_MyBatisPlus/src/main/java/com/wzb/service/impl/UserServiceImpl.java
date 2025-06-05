@@ -45,12 +45,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public List<User> pageQuery(UserQuery userQuery) {
-        // 1.构造分页查询核心参数Page
-        Page<User> page = Page.of(userQuery.getPage(), userQuery.getPageSize());
-        // 2.封装排序参数，使用OrderItem
-        page.addOrder(OrderItem.desc("balance"));
-        page.addOrder(OrderItem.asc("id"));
-        // 3.进行MyBatisPlus的分页查询
+
         Page<User> resultPage = page(page);
         // 3.1获取总记录数
         System.out.println("总记录数" + resultPage.getTotal());
