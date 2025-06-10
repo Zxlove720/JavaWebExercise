@@ -24,6 +24,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         this.userMapper = userMapper;
     }
 
+    /**
+     * 更新用户余额
+     *
+     * @param id 用户id
+     * @param amount 更新金额
+     */
     @Override
     public void updateBalance(Integer id, Integer amount) {
         User user = getById(id);
