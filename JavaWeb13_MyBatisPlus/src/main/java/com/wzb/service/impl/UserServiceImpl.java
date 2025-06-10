@@ -1,7 +1,6 @@
 package com.wzb.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wzb.mapper.UserMapper;
@@ -12,9 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * 用户服务实现类
- */
+
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
@@ -24,12 +21,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         this.userMapper = userMapper;
     }
 
-    /**
-     * 更新用户余额
-     *
-     * @param id 用户id
-     * @param amount 更新金额
-     */
     @Override
     public void updateBalance(Integer id, Integer amount) {
         User user = getById(id);
@@ -53,7 +44,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public List<User> pageQuery(UserQuery userQuery) {
-
+        Page<User> page = userQuery.toPage();
         Page<User> resultPage = page(page);
         // 3.1获取总记录数
         System.out.println("总记录数" + resultPage.getTotal());
