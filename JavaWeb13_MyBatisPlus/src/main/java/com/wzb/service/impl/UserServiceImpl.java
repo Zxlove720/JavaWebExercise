@@ -12,7 +12,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+/**
+ * 用户服务实现类
+ */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
