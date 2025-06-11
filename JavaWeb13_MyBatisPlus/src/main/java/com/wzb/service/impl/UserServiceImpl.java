@@ -41,6 +41,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         userMapper.updateBalance(updateWrapper, amount);
     }
 
+    /**
+     * 用户条件查询
+     *
+     * @param userQuery 用户条件查询实体类
+     * @return
+     */
     @Override
     public List<User> conditionQuery(UserQuery userQuery) {
         return lambdaQuery()
