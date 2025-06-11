@@ -45,7 +45,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
      * 用户条件查询
      *
      * @param userQuery 用户条件查询实体类
-     * @return
+     * @return List<User> 用户列表
      */
     @Override
     public List<User> conditionQuery(UserQuery userQuery) {
