@@ -59,7 +59,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     /**
      * 分页查询
      *
-     * @param userQuery
+     * @param userQuery 用户查询实体类
      * @return
      */
     @Override
