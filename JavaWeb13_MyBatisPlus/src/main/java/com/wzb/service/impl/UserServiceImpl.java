@@ -60,7 +60,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
      * 分页查询
      *
      * @param userQuery 用户查询实体类
-     * @return List<User>
+     * @return List<User> 用户列表
      */
     @Override
     public List<User> pageQuery(UserQuery userQuery) {
