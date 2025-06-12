@@ -56,6 +56,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                 .list();
     }
 
+    /**
+     * 分页查询
+     *
+     * @param userQuery
+     * @return
+     */
     @Override
     public List<User> pageQuery(UserQuery userQuery) {
         Page<User> page = userQuery.toPage();
