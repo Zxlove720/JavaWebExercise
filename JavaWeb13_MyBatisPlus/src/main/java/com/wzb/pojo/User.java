@@ -36,13 +36,4 @@ public class User {
 
     private DeleteEnum deleted;
 
-    public User(Integer id, String username, String phone, Integer balance, LocalDateTime createTime, LocalDateTime updateTime, DeleteEnum deleted) {
-        this.id = id;
-        this.username = username;
-        this.phone = phone;
-        this.balance = balance;
-        this.createTime = createTime;
-        this.updateTime = updateTime;
-        this.deleted = deleted;
-    }
 }
