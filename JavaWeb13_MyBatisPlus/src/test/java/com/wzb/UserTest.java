@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.wzb.Enum.DeleteEnum;
 import com.wzb.mapper.UserMapper;
 import com.wzb.pojo.User;
 import org.junit.jupiter.api.Test;
@@ -46,7 +47,7 @@ public class UserTest {
     @Test
     public void testInsert() {
         User user = new User(10, "第十二", "123456",
-                "13100000010", 10000, LocalDateTime.now(), LocalDateTime.now());
+                "13100000010",  10000, LocalDateTime.now(), LocalDateTime.now(), DeleteEnum.NOT_DELETE);
         userMapper.insert(user);
     }
 
