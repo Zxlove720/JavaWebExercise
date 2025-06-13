@@ -35,4 +35,6 @@ public class User {
     private LocalDateTime updateTime;
 
     private DeleteEnum deleted;
+
+
 }
