@@ -40,6 +40,9 @@ public class UserTest {
         }
     }
 
+    /**
+     * 测试LambdaQuery类
+     */
     @Test
     public void testLambdaQuery() {
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<User>()
