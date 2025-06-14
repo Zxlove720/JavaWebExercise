@@ -27,6 +27,9 @@ public class UserTest {
         this.userMapper = userMapper;
     }
 
+    /**
+     * 查询测试
+     */
     @Test
     public void testQuery() {
         QueryWrapper<User> queryWrapper = new QueryWrapper<User>()
