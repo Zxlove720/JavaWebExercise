@@ -73,6 +73,9 @@ public class UserTest {
         userMapper.delete(queryWrapper);
     }
 
+    /**
+     * 更新测试
+     */
     @Test
     public void testUpdate() {
         List<Integer> ids = List.of(7, 8, 9, 10);
