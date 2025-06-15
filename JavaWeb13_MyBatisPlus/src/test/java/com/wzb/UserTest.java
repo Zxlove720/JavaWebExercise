@@ -63,6 +63,9 @@ public class UserTest {
         userMapper.insert(user);
     }
 
+    /**
+     * 删除测试
+     */
     @Test
     public void testDelete() {
         QueryWrapper<User> queryWrapper = new QueryWrapper<User>()
