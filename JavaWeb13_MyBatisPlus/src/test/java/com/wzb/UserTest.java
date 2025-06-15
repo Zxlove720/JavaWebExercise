@@ -53,6 +53,9 @@ public class UserTest {
         }
     }
 
+    /**
+     * 插入测试
+     */
     @Test
     public void testInsert() {
         User user = new User(10, "第十二", "123456",
