@@ -84,6 +84,9 @@ public class UserTest {
         userMapper.updateBalance(updateWrapper, 2000);
     }
 
+    /**
+     * lambda更新测试
+     */
     @Test
     public void testLambdaUpdate() {
         List<Integer> ids = List.of(7, 8, 9, 10);
