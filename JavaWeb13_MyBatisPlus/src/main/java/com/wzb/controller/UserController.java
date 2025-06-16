@@ -28,6 +28,11 @@ public class UserController {
         userService.save(user);
     }
 
+    /**
+     * 删除用户
+     *
+     * @param id
+     */
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Integer id) {
         userService.removeById(id);
