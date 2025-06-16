@@ -38,6 +38,12 @@ public class UserController {
         userService.removeById(id);
     }
 
+    /**
+     * 查询用户
+     *
+     * @param id
+     * @return
+     */
     @GetMapping("/{id}")
     public User queryUser(@PathVariable Integer id) {
         return userService.getById(id);
