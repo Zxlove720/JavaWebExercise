@@ -42,7 +42,7 @@ public class UserController {
      * 查询用户
      *
      * @param id 用户id
-     * @return
+     * @return User用户实体
      */
     @GetMapping("/{id}")
     public User queryUser(@PathVariable Integer id) {
