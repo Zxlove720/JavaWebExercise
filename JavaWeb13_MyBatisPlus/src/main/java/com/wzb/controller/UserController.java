@@ -41,7 +41,7 @@ public class UserController {
     /**
      * 查询用户
      *
-     * @param id
+     * @param id 用户id
      * @return
      */
     @GetMapping("/{id}")
