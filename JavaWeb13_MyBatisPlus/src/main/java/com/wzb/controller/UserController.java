@@ -31,7 +31,7 @@ public class UserController {
     /**
      * 删除用户
      *
-     * @param id
+     * @param id 用户id
      */
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Integer id) {
