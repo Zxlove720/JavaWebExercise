@@ -53,7 +53,7 @@ public class UserController {
      * 批量查询用户
      *
      * @param ids id集合
-     * @return
+     * @return List<User> 用户列表
      */
     @GetMapping
     public List<User> queryBatchUsers(@RequestParam("ids") List<Integer> ids) {
