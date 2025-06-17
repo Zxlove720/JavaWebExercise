@@ -49,6 +49,12 @@ public class UserController {
         return userService.getById(id);
     }
 
+    /**
+     * 批量查询用户
+     *
+     * @param ids
+     * @return
+     */
     @GetMapping
     public List<User> queryBatchUsers(@RequestParam("ids") List<Integer> ids) {
         return userService.listByIds(ids);
