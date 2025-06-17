@@ -52,7 +52,7 @@ public class UserController {
     /**
      * 批量查询用户
      *
-     * @param ids
+     * @param ids id集合
      * @return
      */
     @GetMapping
