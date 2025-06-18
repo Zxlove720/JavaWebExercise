@@ -60,6 +60,12 @@ public class UserController {
         return userService.listByIds(ids);
     }
 
+    /**
+     * 分页查询
+     *
+     * @param userQuery 用户查询实体类
+     * @return 
+     */
     @GetMapping("/page")
     public List<User> pageQuery(UserQuery userQuery) {
         return userService.pageQuery(userQuery);
