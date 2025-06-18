@@ -64,7 +64,7 @@ public class UserController {
      * 分页查询
      *
      * @param userQuery 用户查询实体类
-     * @return List<User>
+     * @return List<User> 用户列表
      */
     @GetMapping("/page")
     public List<User> pageQuery(UserQuery userQuery) {
