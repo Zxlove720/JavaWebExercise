@@ -72,7 +72,7 @@ public class UserController {
     }
 
     /**
-     *
+     * 修改用户余额
      *
      * @param id
      * @param amount
