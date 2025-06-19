@@ -71,6 +71,12 @@ public class UserController {
         return userService.pageQuery(userQuery);
     }
 
+    /**
+     *
+     *
+     * @param id
+     * @param amount
+     */
     @PutMapping("/{id}/deduction/{amount}")
     public void updateBalance(@PathVariable Integer id, @PathVariable Integer amount) {
         userService.updateBalance(id, amount);
