@@ -74,7 +74,7 @@ public class UserController {
     /**
      * 修改用户余额
      *
-     * @param id
+     * @param id 用户id
      * @param amount
      */
     @PutMapping("/{id}/deduction/{amount}")
