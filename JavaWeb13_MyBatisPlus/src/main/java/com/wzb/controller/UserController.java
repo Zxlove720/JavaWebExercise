@@ -75,7 +75,7 @@ public class UserController {
      * 修改用户余额
      *
      * @param id 用户id
-     * @param amount
+     * @param amount 修改的金额
      */
     @PutMapping("/{id}/deduction/{amount}")
     public void updateBalance(@PathVariable Integer id, @PathVariable Integer amount) {
