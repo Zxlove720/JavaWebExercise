@@ -86,7 +86,7 @@ public class UserController {
      * 条件查询
      *
      * @param userQuery 用户查询实体
-     * @return List<User>
+     * @return List<User> 用户列表
      */
     @PostMapping("/query")
     public List<User> conditionQuery(@RequestBody UserQuery userQuery) {
