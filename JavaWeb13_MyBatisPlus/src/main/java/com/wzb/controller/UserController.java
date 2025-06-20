@@ -83,7 +83,8 @@ public class UserController {
     }
 
     /**
-     * 
+     * 条件查询
+     *
      * @param userQuery
      * @return
      */
