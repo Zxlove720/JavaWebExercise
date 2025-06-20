@@ -85,7 +85,7 @@ public class UserController {
     /**
      * 条件查询
      *
-     * @param userQuery
+     * @param userQuery 用户查询实体
      * @return
      */
     @PostMapping("/query")
