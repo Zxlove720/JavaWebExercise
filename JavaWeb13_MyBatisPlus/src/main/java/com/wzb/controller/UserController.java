@@ -82,6 +82,7 @@ public class UserController {
         userService.updateBalance(id, amount);
     }
 
+    
     @PostMapping("/query")
     public List<User> conditionQuery(@RequestBody UserQuery userQuery) {
         return userService.conditionQuery(userQuery);
