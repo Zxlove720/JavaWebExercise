@@ -33,6 +33,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public void updateBalance(Integer id, Integer amount) {
         // 根据用户id获取用户
         User user = getById(id);
+        // 判断用户的余额是否支持扣款
         if (user.getBalance() < amount) {
             System.out.println("余额不足");
             throw new RuntimeException("余额不足");
