@@ -42,6 +42,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         // 构造UpdateWrapper，添加判断条件
         LambdaUpdateWrapper<User> updateWrapper = new LambdaUpdateWrapper<User>()
                 .eq(User::getId, id);
+        // 通过UserMapper中构造的方法修改用户余额
         userMapper.updateBalance(updateWrapper, amount);
     }
 
