@@ -31,6 +31,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
      */
     @Override
     public void updateBalance(Integer id, Integer amount) {
+        // 根据用户id获取用户
         User user = getById(id);
         if (user.getBalance() < amount) {
             System.out.println("余额不足");
