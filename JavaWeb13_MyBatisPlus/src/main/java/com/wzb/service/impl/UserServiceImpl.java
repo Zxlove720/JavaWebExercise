@@ -39,6 +39,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             System.out.println("余额不足");
             throw new RuntimeException("余额不足");
         }
+        // 构造UpdateWrapper，添加判断条件
         LambdaUpdateWrapper<User> updateWrapper = new LambdaUpdateWrapper<User>()
                 .eq(User::getId, id);
         userMapper.updateBalance(updateWrapper, amount);
