@@ -56,6 +56,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public List<User> conditionQuery(UserQuery userQuery) {
         // 封装查询条件
         return lambdaQuery()
+                // 模糊匹配
                 .like(userQuery.getUsername() != null && !userQuery.getUsername().isEmpty(), User::getUsername, userQuery.getUsername())
                 .ge(userQuery.getMinBalance() != null, User::getBalance, userQuery.getMinBalance())
                 .le(userQuery.getMaxBalance() != null, User::getBalance, userQuery.getMaxBalance())
