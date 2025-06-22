@@ -58,6 +58,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return lambdaQuery()
                 // 模糊匹配
                 .like(userQuery.getUsername() != null && !userQuery.getUsername().isEmpty(), User::getUsername, userQuery.getUsername())
+                // 大于等于
                 .ge(userQuery.getMinBalance() != null, User::getBalance, userQuery.getMinBalance())
                 .le(userQuery.getMaxBalance() != null, User::getBalance, userQuery.getMaxBalance())
                 .list();
