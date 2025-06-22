@@ -62,6 +62,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                 .ge(userQuery.getMinBalance() != null, User::getBalance, userQuery.getMinBalance())
                 // 小于等于
                 .le(userQuery.getMaxBalance() != null, User::getBalance, userQuery.getMaxBalance())
+                // 批量查询
                 .list();
     }
 
