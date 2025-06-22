@@ -60,6 +60,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
                 .like(userQuery.getUsername() != null && !userQuery.getUsername().isEmpty(), User::getUsername, userQuery.getUsername())
                 // 大于等于
                 .ge(userQuery.getMinBalance() != null, User::getBalance, userQuery.getMinBalance())
+                // 小于等于
                 .le(userQuery.getMaxBalance() != null, User::getBalance, userQuery.getMaxBalance())
                 .list();
     }
