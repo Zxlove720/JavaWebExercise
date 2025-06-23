@@ -14,6 +14,7 @@ import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
 
+    // 修改用户余额
     @Update("update user set balance = balance + #{amount} ${ew.customSqlSegment}")
     void updateBalance(@Param(Constants.WRAPPER)Wrapper <User> wrapper, @Param("amount")int amount);
 }
