@@ -26,6 +26,7 @@
         <option value="$PROJECT_DIR$/redis_study/pom.xml" />
         <option value="$PROJECT_DIR$/JavaWeb13_MyBatisPlus/pom.xml" />
         <option value="$PROJECT_DIR$/redis_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/redis_springData/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
