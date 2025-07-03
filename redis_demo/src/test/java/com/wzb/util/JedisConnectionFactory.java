@@ -1,5 +1,6 @@
 package com.wzb.util;
 
+import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
@@ -23,4 +24,7 @@ public class JedisConnectionFactory {
                 1000, "262460wzbWZB...");
     }
 
+    public static Jedis getConnection() {
+        return jedisPool.getResource();
+    }
 }
