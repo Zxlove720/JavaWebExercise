@@ -48,6 +48,8 @@ public class JedisTest {
         System.out.println(result);
         List<String> studentField = jedis.hmget("student", "name", "gender", "age");
         System.out.println(studentField);
+        Map<String, String> studentMap = jedis.hgetAll("student");
+        System.out.println(studentMap);
     }
 
     @AfterEach
