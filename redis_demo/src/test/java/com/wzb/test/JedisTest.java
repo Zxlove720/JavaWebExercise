@@ -5,6 +5,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import redis.clients.jedis.Jedis;
 
+/**
+ * Jedis测试
+ */
 public class JedisTest {
 
     private Jedis jedis;
