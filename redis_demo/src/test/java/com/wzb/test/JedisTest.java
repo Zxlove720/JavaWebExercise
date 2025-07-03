@@ -1,0 +1,39 @@
+package com.wzb.test;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import redis.clients.jedis.Jedis;
+
+public class JedisTest {
+
+    private Jedis jedis;
+
+    @BeforeEach
+    void setUp() {
+        // 建立连接
+        jedis = new Jedis("192.168.181.134", 6379);
+        // 设置密码
+        jedis.auth("262460wzbWZB...");
+        // 选择库
+        jedis.select(0);
+    }
+
+    @Test
+    void testString() {
+        // 存入数据
+        String result = jedis.set("username", "jack");
+        System.out.println(result);
+        // 获取数据
+        String username = jedis.get("username");
+        System.out.println(username);
+    }
+
+    @AfterEach
+    void close() {
+        if (jedis != null) {
+            jedis.close();
+        }
+    }
+
+}
