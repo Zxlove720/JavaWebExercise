@@ -1,5 +1,6 @@
 package com.wzb.test;
 
+import com.wzb.util.JedisConnectionFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,9 +20,7 @@ public class JedisTest {
     @BeforeEach
     void setUp() {
         // 建立连接
-        jedis = new Jedis("192.168.181.134", 6379);
-        // 设置密码
-        jedis.auth("262460wzbWZB...");
+        jedis = JedisConnectionFactory.getConnection();
         // 选择库
         jedis.select(0);
     }
