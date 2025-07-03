@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import redis.clients.jedis.Jedis;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -45,7 +46,8 @@ public class JedisTest {
         student.put("phone", "13100000001");
         String result = jedis.hmset("student", student);
         System.out.println(result);
-
+        List<String> studentField = jedis.hmget("student", "name", "gender", "age");
+        System.out.println(studentField);
     }
 
     @AfterEach
