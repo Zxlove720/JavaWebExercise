@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
+import java.util.Map;
+
 @SpringBootTest
 public class StringRedisTemplateTests {
 
@@ -29,5 +31,13 @@ public class StringRedisTemplateTests {
         // 手动反序列化
         User readUser = mapper.readValue(jsonUser, User.class);
         System.out.println(readUser);
+    }
+
+    @Test
+    void testHash() {
+        stringRedisTemplate.opsForHash().put("username", "username", "lisi");
+        stringRedisTemplate.opsForHash().put("username", "age", "20");
+        Map<Object, Object> username = stringRedisTemplate.opsForHash().entries("username");
+        System.out.println(username);
     }
 }
